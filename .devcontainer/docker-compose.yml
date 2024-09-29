@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: app/Dockerfile
+        volumes:
+            - ../..:/workspaces:cached
+            - embeddings:/workspaces:cached/embeddings
+        command: sleep infinity
+volumes:
+    embeddings:
